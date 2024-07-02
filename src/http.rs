@@ -1,4 +1,4 @@
-use actix_web::{get, web, App, HttpRequest, HttpResponse, HttpServer, Responder};
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 use std::sync::Arc;
 
 #[get("/board")]
@@ -11,6 +11,7 @@ pub async fn start(data: super::Data) -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(Arc::clone(&data)))
+            .wrap(actix_cors::Cors::permissive())
             .service(get_board)
     })
     .bind("0.0.0.0:8080")?

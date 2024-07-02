@@ -394,6 +394,7 @@ struct PlayerInfo {
     money: i32,
     owned: HashSet<usize>,
     bankrupt: bool,
+    pos: usize
 }
 
 pub struct Game {
@@ -511,6 +512,22 @@ impl Game {
             }
         }
         true
+    }
+
+    fn move_to(&mut self, player: &Player, pos: usize, skip_go: bool) {
+        let player = self.players.get_mut(player).expect("player doesnt exist");
+        player.pos = pos;
+        if pos < player.pos && !skip_go {
+            player.money += 200;
+        }
+    }
+
+    fn advance_by(&self, player: &Player, cells: usize) -> usize {
+        (self.players.get(player).expect("Player doesnt exist").pos + cells) % self.board.cells.len()
+    }
+
+    fn recede_by(&self, player: &Player, cells: usize) -> usize {
+        (self.players.get(player).expect("Player doesnt exist").pos + self.board.cells.len() - cells) % self.board.cells.len()
     }
 }
 

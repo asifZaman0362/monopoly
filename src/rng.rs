@@ -45,7 +45,7 @@ pub enum RandomCard {
         target: Target,
         go_pass_action: GoPassAction,
         money: Amount,
-        multipler: u16
+        multipler: u16,
     },
     Gain {
         amount: u16,
@@ -61,6 +61,7 @@ pub enum RandomCard {
     Repairs {
         hotel: u16,
         house: u16,
+        text: String,
     },
 }
 
@@ -102,7 +103,12 @@ pub fn load_chance_table() -> std::io::Result<ChanceTable> {
     Ok(table)
 }
 
-pub fn get_random_community_chest_card(labels: &Labels, chance_table: &ChanceTable, config: &super::Config, data: &super::Data) -> RandomCard {
+pub fn get_random_community_chest_card(
+    labels: &Labels,
+    chance_table: &ChanceTable,
+    config: &super::Config,
+    data: &super::Data,
+) -> RandomCard {
     let probability = fastrand::f32() * 100.0;
     let mut i = 0;
     let chance_type = loop {
@@ -171,7 +177,7 @@ fn get_random_move_card(config: &super::Config, data: &super::Data) -> RandomCar
             target: Target::Cell(data.cities[c]),
             go_pass_action: GoPassAction::Collect,
             money: Amount::Original,
-            multipler: 1
+            multipler: 1,
         }
     } else if p < config.prob_goto_train {
         let t = fastrand::usize(0..data.stations.len());
@@ -179,7 +185,7 @@ fn get_random_move_card(config: &super::Config, data: &super::Data) -> RandomCar
             target: Target::Cell(data.stations[t]),
             go_pass_action: GoPassAction::Collect,
             money: Amount::Original,
-            multipler: 2
+            multipler: 2,
         }
     } else {
         let u = fastrand::usize(0..data.utilities.len());
@@ -187,11 +193,17 @@ fn get_random_move_card(config: &super::Config, data: &super::Data) -> RandomCar
             target: Target::Cell(data.utilities[u]),
             go_pass_action: GoPassAction::Collect,
             money: Amount::Roll,
-            multipler: 10
+            multipler: 10,
         }
     }
 }
 
 fn get_random_repairs_card(labels: &Labels) -> RandomCard {
-    unimplemented!()
+    let l = labels
+        .get(&LabelFor::Repairs)
+        .expect("Label doesnt exist for this type");
+    let text = l[fastrand::usize(0..l.len())].clone();
+    let hotel = fastrand::u16(50..150);
+    let house = fastrand::u16(25..75);
+    RandomCard::Repairs { hotel, house, text }
 }
