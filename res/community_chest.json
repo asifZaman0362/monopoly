@@ -1,0 +1,48 @@
+[
+    {
+        "Move": {
+            "target": "Go",
+            "go_pass_action": "Collect"
+        }
+    },
+    {
+        "Gain": {
+            "min": 100,
+            "max": 200,
+            "text": [ 
+                "Bank error in your favour",
+                "2nd Prize in beauty contest",
+                "You won a lottery!",
+                "Inheritance money",
+                "Grandma's will payout. You know what that means right?",
+                "Some poor sod dropped his wallet and is nowhere to be found. Oh well!"
+            ]
+        }
+    },
+    {
+        "Loss": {
+            "min": 200,
+            "max": 350,
+            "text": [
+                "Monthly food expenses. Sheesh, thats a lot!",
+                "Your friend really wants you to buy stocks in their company",
+                "You could actually use a new car, to be honest",
+                "Lets buy ourselves a brand new suit, shall we?"
+            ]
+        }
+    },
+    {
+        "Loss": {
+            "min": 25,
+            "max": 100,
+            "text": [
+                "Hospital fees. You could use some excercise!",
+                "Saving money for a rainy day",
+                "You just got mugged!",
+                "School fees for the kids"
+            ]
+        }
+    },
+    "GotoJail",
+    "GetOutOfJailFree"
+]

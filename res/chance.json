@@ -1,0 +1,95 @@
+[
+    {
+        "Move": {
+            "target": "City",
+            "go_pass_action": "Collect",
+            "multiplier": "None",
+            "money": "Fixed"
+        }
+    },
+    {
+        "Move": {
+            "target": "Go",
+            "go_pass_action": "Collect",
+            "multiplier": "None",
+            "money": "Fixed"
+        }
+    },
+    {
+        "Move": {
+            "target": "Station",
+            "go_pass_action": "Skip",
+            "multiplier": {
+                "Some": 2
+            },
+            "money": "Fixed"
+        }
+    },
+    {
+        "Move": {
+            "target": "Utility",
+            "go_pass_action": "Skip",
+            "multiplier": {
+                "Some": 10
+            },
+            "money": "Roll"
+        }
+    },
+    {
+        "Gain": {
+            "money": 50,
+            "text": "Bank pays you dividend"
+        }
+    },
+    {
+        "Move": {
+            "target": {
+                "Back": 3
+            },
+            "go_pass_action": "Skip"
+        }
+    },
+    "GetOutOfJailFree",
+    "GotoJail",
+    {
+        "Repairs": {
+            "hotel": 100,
+            "house": 25
+        }
+    },
+    {
+        "Loss": {
+            "money": 25,
+            "pay_to": "Gov",
+            "text": [ 
+                "Speeding Fine",
+                "DUI Fine",
+                "Gambling tax"
+            ]
+        }
+    },
+    {
+        "Loss": {
+            "max": 100,
+            "min": 25,
+            "pay_to": "AllPlayers",
+            "text": [ 
+                "You've been elected chairman", 
+                "Your soul is overrun with an overwhelming desire to commit acts of altruism", 
+                "All those monopoly dollars demands a party",
+                "Every minute there's a sucker born!"
+            ]
+        }
+    },
+    {
+        "Gain": {
+            "min": 150,
+            "max": 300,
+            "text": [
+                "Your building load matures",
+                "The gods have decided to make it rain on you!",
+                "Google buys your groundbreaking new assisted tap-dancing learning app"
+            ]
+        }
+    }
+]

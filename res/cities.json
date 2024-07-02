@@ -1,0 +1,134 @@
+[
+  [
+    "Old Kent Road",
+    60,
+    "Brown",
+    1
+  ],
+  [
+    "WhiteChapel Road",
+    60,
+    "Brown",
+    3
+  ],
+  [
+    "The Angel IslingTon",
+    100,
+    "Cyan",
+    6
+  ],
+  [
+    "Euston Road",
+    100,
+    "Cyan",
+    8
+  ],
+  [
+    "PentonVille Road",
+    100,
+    "Cyan",
+    9
+  ],
+  [
+    "Pall Mall",
+    140,
+    "Purple",
+    11
+  ],
+  [
+    "WhiteHall",
+    140,
+    "Purple",
+    13
+  ],
+  [
+    "Northumrl'd Avenue",
+    160,
+    "Purple",
+    14
+  ],
+  [
+    "Bow Street",
+    180,
+    "Orange",
+    16
+  ],
+  [
+    "Marlborough Street",
+    180,
+    "Orange",
+    18
+  ],
+  [
+    "Vine Street",
+    200,
+    "Orange",
+    19
+  ],
+  [
+    "Strand",
+    220,
+    "Red",
+    21
+  ],
+  [
+    "Fleet Street",
+    220,
+    "Red",
+    23
+  ],
+  [
+    "Trafalgar Square",
+    240,
+    "Red",
+    24
+  ],
+  [
+    "Leicester Square",
+    260,
+    "Yellow",
+    26
+  ],
+  [
+    "Coventry Street",
+    260,
+    "Yellow",
+    27
+  ],
+  [
+    "Piccadilly",
+    280,
+    "Yellow",
+    29
+  ],
+  [
+    "Regent Street",
+    300,
+    "Green",
+    31
+  ],
+  [
+    "Oxford Street",
+    300,
+    "Green",
+    32
+  ],
+  [
+    "Bond Street",
+    320,
+    "Green",
+    34
+  ],
+  [
+    "Park Lane",
+    350,
+    "Blue",
+    37
+  ],
+  [
+    "Mayfair",
+    400,
+    "Blue",
+    39
+  ]
+]
