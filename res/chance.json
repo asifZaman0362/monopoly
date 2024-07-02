@@ -36,12 +36,6 @@
         }
     },
     {
-        "Gain": {
-            "money": 50,
-            "text": "Bank pays you dividend"
-        }
-    },
-    {
         "Move": {
             "target": {
                 "Back": 3
